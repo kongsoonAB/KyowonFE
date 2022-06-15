@@ -19,7 +19,7 @@ function App() {
     <>
       <GlobalStyle />
       <div className="App">
-        <BrowserRouter>
+        <BrowserRouter basename="/KyowonFE">
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="test" element={<TestPage />} />
