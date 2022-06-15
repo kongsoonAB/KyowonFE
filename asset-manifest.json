@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/KyowonFE/static/css/main.f3fb6807.css",
+    "main.js": "/KyowonFE/static/js/main.97c66647.js",
+    "static/js/787.c451fdf3.chunk.js": "/KyowonFE/static/js/787.c451fdf3.chunk.js",
+    "static/media/image 1.png": "/KyowonFE/static/media/image 1.3ba146be13fce4b19fca.png",
+    "static/media/스캔.gif": "/KyowonFE/static/media/스캔.71c856c8593a87bd0ee7.gif",
+    "static/media/loading.gif": "/KyowonFE/static/media/loading.4fd8ef1d94b01500e75f.gif",
+    "static/media/시작하기버튼.png": "/KyowonFE/static/media/시작하기버튼.7d7ba29049f4c66f4331.png",
+    "index.html": "/KyowonFE/index.html",
+    "main.f3fb6807.css.map": "/KyowonFE/static/css/main.f3fb6807.css.map",
+    "main.97c66647.js.map": "/KyowonFE/static/js/main.97c66647.js.map",
+    "787.c451fdf3.chunk.js.map": "/KyowonFE/static/js/787.c451fdf3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3fb6807.css",
+    "static/js/main.97c66647.js"
+  ]
+}
