@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { createGlobalStyle } from "styled-components";
+import { MainPage } from "./Page/Main";
+import { Header } from "Header/Header";
+import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
+import { UploadPage } from "./Page/Test";
+import { LoadingPage } from "./Page/Loading";
+import { UploadBody } from "./Body/UploadBody";
+import { TestPage } from "./Page/Test";
+import { LoadingBody } from "./Body/LoadingBody";
 
 function App() {
+  const GlobalStyle = createGlobalStyle`
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+  `;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="test" element={<TestPage />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
   );
 }
 
