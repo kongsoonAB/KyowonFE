@@ -4,6 +4,7 @@ import { AnsUploadButton } from "../Button/UploadButton";
 import { Words } from "../config";
 import { useParams, useNavigate } from "react-router";
 import { GradingButton } from "../Button/FooterButton";
+
 const UploadBodyContainer = styled.div`
   margin-top: 190px;
   display: flex;
@@ -36,7 +37,7 @@ export function UploadBody({ grade, upload }) {
     let randomWordArray = [];
     let randomIndexArrray = [];
     for (let i = 0; i < 2; i++) {
-      let randomIndex = Math.floor(Math.random() * 3);
+      let randomIndex = Math.floor(Math.random() * Words[grade].length);
       if (randomIndexArrray.indexOf(randomIndex) === -1) {
         randomIndexArrray.push(randomIndex);
         randomWordArray.push(Words[grade][randomIndex]);
@@ -48,14 +49,20 @@ export function UploadBody({ grade, upload }) {
   }, []);
 
   const handleImageUpload = (e, index) => {
-    console.log(e, index);
     setFileImageThumb({
       ...fileImageThumb,
       [index]: URL.createObjectURL(e.target.files[0]),
     });
     const formData = new FormData();
     formData.append("file", e.target.files[0]);
-    setFileImage([...fileImage, { word: words[index], image: formData }]);
+    setFileImage([
+      ...fileImage,
+      {
+        word: words[index],
+        image: formData,
+        thumbnail: URL.createObjectURL(e.target.files[0]),
+      },
+    ]);
   };
   const handleButtonClick = (index) => {
     imageInput.current[index].click();
@@ -68,7 +75,10 @@ export function UploadBody({ grade, upload }) {
           <UploadLine key={word}>
             {index + 1}. {word} :{" "}
             {fileImageThumb[index] !== "" ? (
-              <img src={fileImageThumb[index]} />
+              <img
+                src={fileImageThumb[index]}
+                style={{ width: "300px", height: "55px", objectFit: "contain" }}
+              />
             ) : (
               <>
                 <AnsUploadButton

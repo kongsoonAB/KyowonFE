@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { UploadBody } from "../Body/UploadBody";
 import { HeaderV2 } from "../Header/Header";
 import { SubHeader } from "../Header/SubHeader";
+import { ResultFooter } from "Footer/ResultFooter";
+import { ResultBody } from "Body/ResultBody";
 
 const Container = styled.div`
   display: flex;
@@ -17,6 +19,8 @@ export function ResultPage() {
     <Container>
       <HeaderV2 />
       <SubHeader />
+      <ResultBody />
+      <ResultFooter />
     </Container>
   );
 }
