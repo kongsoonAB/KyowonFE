@@ -53,13 +53,12 @@ export function UploadBody({ grade, upload }) {
       ...fileImageThumb,
       [index]: URL.createObjectURL(e.target.files[0]),
     });
-    const formData = new FormData();
-    formData.append("file", e.target.files[0]);
+
     setFileImage([
       ...fileImage,
       {
         word: words[index],
-        image: formData,
+        image: e.target.files[0],
         thumbnail: URL.createObjectURL(e.target.files[0]),
       },
     ]);

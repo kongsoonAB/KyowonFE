@@ -8,6 +8,11 @@ import { Outlet } from "react-router";
 import { LoadingBody } from "../Body/LoadingBody";
 import { useState } from "react";
 import { ResultBody } from "Body/ResultBody";
+import axios from "axios";
+import { API_URL } from "./API";
+import { BACK_API_URL } from "./API";
+import { DOMAIN_URL } from "./API";
+import { BACKEND_URL } from "./API";
 
 const Container = styled.div`
   display: flex;
@@ -22,27 +27,32 @@ export function TestPage() {
   const [step, setStep] = useState(0);
   const [answer, setAnswer] = useState(null);
   const [result, setResult] = useState(null);
+
   const uploadTest = (test) => {
     //console.log(test); //uploaded image
     setAnswer(test);
     setStep((prev) => prev + 1);
 
-    setTimeout(function () {
-      //임시용
-      //result herec
-      const resultFromBack = [
-        {
-          detected: "저쩌구",
-          correct: true,
+    const formData = new FormData();
+    formData.append("file", test[0].image);
+    formData.append("file", test[1].image);
+    formData.append("grade", grade);
+    formData.append("word1", test[0].word);
+    formData.append("word2", test[1].word);
+
+    console.log(formData);
+    axios
+      .post(`/learn/`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
         },
-        {
-          detected: "어쩌구",
-          correct: false,
-        },
-      ];
-      setResult(resultFromBack);
-      setStep((prev) => prev + 1);
-    }, 3000);
+      })
+      .then((result) => {
+        console.log(result);
+        setResult(result);
+        setStep((prev) => prev + 1);
+      });
+
     //upload here
     //when finish => setStep((prev) => prev + 1);
   };

@@ -59,31 +59,31 @@ export function ResultBody({ answer, result }) {
   return (
     <UploadBodyContainer>
       <UploadLine>
-        <GetAnswerMark isCorrect={result[0].correct} />
+        <GetAnswerMark isCorrect={result.result1} />
         1. {answer[0].word} :
         <img
           src={answer[0].thumbnail}
           style={{ width: "300px", height: "55px", objectFit: "contain" }} //몰?루
         />
       </UploadLine>
-      <DetResult isCorrect={result[0].correct}>
+      <DetResult isCorrect={result.result1}>
         {"  "}
         <span style={{ color: "black", fontWeight: "600" }}>인식결과 :</span>
         {"  "}
-        {result[0].detected}
+        {result.resultWord1}
       </DetResult>
       <UploadLine>
-        <GetAnswerMark isCorrect={result[1].correct} />
+        <GetAnswerMark isCorrect={result.result2} />
         2. {answer[1].word} :
         <img
           src={answer[1].thumbnail}
           style={{ width: "300px", height: "55px", objectFit: "contain" }}
         />
       </UploadLine>
-      <DetResult isCorrect={result[1].correct}>
+      <DetResult isCorrect={result.result2}>
         <span style={{ color: "black", fontWeight: "600" }}>인식결과 : </span>
         {"  "}
-        {result[1].detected}
+        {result.resultWord2}
       </DetResult>
       <ResultFooter />
     </UploadBodyContainer>
