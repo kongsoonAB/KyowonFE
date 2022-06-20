@@ -5,6 +5,7 @@ import { GradingButton } from "../Button/FooterButton";
 import correct from "../images/correct.png";
 import wrong from "../images/wrong.png";
 import { ResultFooter } from "Footer/ResultFooter";
+import { TestPage } from "Page/Test";
 const UploadBodyContainer = styled.div`
   margin-top: 190px;
   display: flex;
@@ -59,31 +60,29 @@ export function ResultBody({ answer, result }) {
   return (
     <UploadBodyContainer>
       <UploadLine>
-        <GetAnswerMark isCorrect={result.result1} />
+        <GetAnswerMark isCorrect={result.data.result1} />
         1. {answer[0].word} :
         <img
           src={answer[0].thumbnail}
           style={{ width: "300px", height: "55px", objectFit: "contain" }} //몰?루
         />
       </UploadLine>
-      <DetResult isCorrect={result.result1}>
-        {"  "}
+      <DetResult isCorrect={result.data.result1}>
         <span style={{ color: "black", fontWeight: "600" }}>인식결과 :</span>
-        {"  "}
-        {result.resultWord1}
+
+        {result.data.resultWord1}
       </DetResult>
       <UploadLine>
-        <GetAnswerMark isCorrect={result.result2} />
+        <GetAnswerMark isCorrect={result.data.result2} />
         2. {answer[1].word} :
         <img
           src={answer[1].thumbnail}
           style={{ width: "300px", height: "55px", objectFit: "contain" }}
         />
       </UploadLine>
-      <DetResult isCorrect={result.result2}>
+      <DetResult isCorrect={result.data.result2}>
         <span style={{ color: "black", fontWeight: "600" }}>인식결과 : </span>
-        {"  "}
-        {result.resultWord2}
+        {result.data.resultWord2}
       </DetResult>
       <ResultFooter />
     </UploadBodyContainer>

@@ -29,7 +29,7 @@ export function TestPage() {
   const [result, setResult] = useState(null);
 
   const uploadTest = (test) => {
-    //console.log(test); //uploaded image
+    console.log(test); //uploaded image
     setAnswer(test);
     setStep((prev) => prev + 1);
 
