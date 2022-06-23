@@ -33,12 +33,12 @@ const DetResult = styled.div`
   align-items: flex-end;
   margin-top: 30px;
   margin-bottom: 80px;
-  font-family: "Inter";
+  font-family: "IBM Plex Sans KR";
   font-style: normal;
   font-weight: 400;
   font-size: 40px;
   line-height: 48px;
-
+  white-space: pre-wrap;
   color: ${(props) => (props.isCorrect ? "black" : "red")};
 `;
 
@@ -72,6 +72,10 @@ export function ResultBody({ answer, result }) {
 
         {result.data.resultWord1}
       </DetResult>
+      <DetResult style={{ fontWeight: "200", color: "black" }}>
+        {" "}
+        {result.data.rf1}{" "}
+      </DetResult>
       <UploadLine>
         <GetAnswerMark isCorrect={result.data.result2} />
         2. {answer[1].word} :
@@ -83,6 +87,10 @@ export function ResultBody({ answer, result }) {
       <DetResult isCorrect={result.data.result2}>
         <span style={{ color: "black", fontWeight: "600" }}>인식결과 : </span>
         {result.data.resultWord2}
+      </DetResult>
+      <DetResult style={{ fontWeight: "200", color: "black" }}>
+        {" "}
+        {result.data.rf2}{" "}
       </DetResult>
       <ResultFooter />
     </UploadBodyContainer>

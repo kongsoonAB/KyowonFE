@@ -36,7 +36,7 @@ const InputBodyCont = styled.div`
 
 const BodyInputEntry = styled.input`
   box-sizing: border-box;
-  font-family: "Inter";
+  font-family: "IBM Plex Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 30px;
@@ -53,7 +53,7 @@ const BodyInputEntry = styled.input`
 
 const GradeSelector = styled.select`
   box-sizing: border-box;
-  font-family: "Inter";
+  font-family: "IBM Plex Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 30px;

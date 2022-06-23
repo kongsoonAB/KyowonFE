@@ -25,7 +25,7 @@ const SubjectStyle = styled.div`
   justify-content: center;
   align-items: center;
 
-  font-family: "Inter";
+  font-family: "IBM Plex Sans KR";
   font-style: normal;
   font-weight: 600;
   font-size: 40px;
@@ -40,7 +40,7 @@ const StudentInfo = styled.div`
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  font-family: "Inter";
+  font-family: "IBM Plex Sans KR";
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
